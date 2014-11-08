@@ -10,16 +10,38 @@
 
 @interface ViewController ()
 
+@property IBOutlet UITextView *textView;
+@property NSMutableArray *memoriesArray;
+
+//-(IBAction)share;
+
 @end
 
 @implementation ViewController
 
+@synthesize memoriesArray, textView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // retrieving array of memories from NSUserDefaults
+    memoriesArray = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"memoriesArray"]];
+    
 }
 
+/*
+-(IBAction)share
+{
+    // Creating a new memory
+    NSMutableDictionary *memory = [[NSMutableDictionary alloc]initWithObjectsAndKeys:textView.text,@"memory",[NSDate dateWithTimeIntervalSinceNow:15],@"date", nil];
+    
+    // Adding it to a global array
+    [memoriesArray addObject:memory];
+    
+    // Saving changes to array of memories
+    [[NSUserDefaults standardUserDefaults]setObject:memoriesArray forKey:@"memoriesArray"];
+}*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
