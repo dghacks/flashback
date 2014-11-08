@@ -13,6 +13,6 @@
 @interface Thoughts : NSManagedObject
 
 @property (nonatomic, retain) NSString * thought;
-@property (nonatomic) NSDate date;
+@property (nonatomic) NSDate* date;
 
 @end

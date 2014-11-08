@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CoreDataStack.h"
+#import "Thoughts.h"
 
 @interface ViewController ()
 
@@ -30,9 +32,10 @@
     
 }
 
-/*
+
 -(IBAction)share
 {
+    /*
     // Creating a new memory
     NSMutableDictionary *memory = [[NSMutableDictionary alloc]initWithObjectsAndKeys:textView.text,@"memory",[NSDate dateWithTimeIntervalSinceNow:15],@"date", nil];
     
@@ -40,8 +43,19 @@
     [memoriesArray addObject:memory];
     
     // Saving changes to array of memories
-    [[NSUserDefaults standardUserDefaults]setObject:memoriesArray forKey:@"memoriesArray"];
-}*/
+    [[NSUserDefaults standardUserDefaults]setObject:memoriesArray forKey:@"memoriesArray"];*/
+    
+    CoreDataStack *cds = [CoreDataStack defaulStack];
+    
+    Thoughts *thought = [NSEntityDescription insertNewObjectForEntityForName:@"Thoughts" inManagedObjectContext:cds.managedObjectContext];
+    
+    thought.thought = textView.text;
+    thought.date = [NSDate dateWithTimeIntervalSinceNow:15];
+    
+    [cds saveContext];
+
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
