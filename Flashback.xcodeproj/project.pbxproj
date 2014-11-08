@@ -21,6 +21,11 @@
 		0B781F361A0E685A008CCE69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B781F181A0E685A008CCE69 /* UIKit.framework */; };
 		0B781F3E1A0E685A008CCE69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B781F3C1A0E685A008CCE69 /* InfoPlist.strings */; };
 		0B781F401A0E685A008CCE69 /* FlashbackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B781F3F1A0E685A008CCE69 /* FlashbackTests.m */; };
+		DACEA0D61A0E715A007E3236 /* Flashback.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DACEA0D41A0E715A007E3236 /* Flashback.xcdatamodeld */; };
+		DACEA0DA1A0E71B4007E3236 /* CoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = DACEA0D81A0E71B4007E3236 /* CoreDataStack.h */; };
+		DACEA0DB1A0E71B4007E3236 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEA0D91A0E71B4007E3236 /* CoreDataStack.m */; };
+		DACEA0DE1A0E7250007E3236 /* Thoughts.h in Headers */ = {isa = PBXBuildFile; fileRef = DACEA0DC1A0E7250007E3236 /* Thoughts.h */; };
+		DACEA0DF1A0E7250007E3236 /* Thoughts.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEA0DD1A0E7250007E3236 /* Thoughts.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		0B781F3B1A0E685A008CCE69 /* FlashbackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashbackTests-Info.plist"; sourceTree = "<group>"; };
 		0B781F3D1A0E685A008CCE69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B781F3F1A0E685A008CCE69 /* FlashbackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashbackTests.m; sourceTree = "<group>"; };
+		DACEA0D51A0E715A007E3236 /* Flashback.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashback.xcdatamodel; sourceTree = "<group>"; };
+		DACEA0D81A0E71B4007E3236 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		DACEA0D91A0E71B4007E3236 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		DACEA0DC1A0E7250007E3236 /* Thoughts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thoughts.h; sourceTree = "<group>"; };
+		DACEA0DD1A0E7250007E3236 /* Thoughts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thoughts.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +123,14 @@
 			isa = PBXGroup;
 			children = (
 				0B781F231A0E685A008CCE69 /* AppDelegate.h */,
+				DACEA0D71A0E71A5007E3236 /* Model */,
 				0B781F241A0E685A008CCE69 /* AppDelegate.m */,
 				0B781F261A0E685A008CCE69 /* Main.storyboard */,
 				0B781F291A0E685A008CCE69 /* ViewController.h */,
 				0B781F2A1A0E685A008CCE69 /* ViewController.m */,
 				0B781F2C1A0E685A008CCE69 /* Images.xcassets */,
 				0B781F1B1A0E685A008CCE69 /* Supporting Files */,
+				DACEA0D41A0E715A007E3236 /* Flashback.xcdatamodeld */,
 			);
 			path = Flashback;
 			sourceTree = "<group>";
@@ -152,7 +164,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DACEA0D71A0E71A5007E3236 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DACEA0DC1A0E7250007E3236 /* Thoughts.h */,
+				DACEA0DD1A0E7250007E3236 /* Thoughts.m */,
+				DACEA0D81A0E71B4007E3236 /* CoreDataStack.h */,
+				DACEA0D91A0E71B4007E3236 /* CoreDataStack.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DACEA0D31A0E710C007E3236 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACEA0DE1A0E7250007E3236 /* Thoughts.h in Headers */,
+				DACEA0DA1A0E71B4007E3236 /* CoreDataStack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0B781F101A0E685A008CCE69 /* Flashback */ = {
@@ -162,6 +197,7 @@
 				0B781F0D1A0E685A008CCE69 /* Sources */,
 				0B781F0E1A0E685A008CCE69 /* Frameworks */,
 				0B781F0F1A0E685A008CCE69 /* Resources */,
+				DACEA0D31A0E710C007E3236 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -249,7 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACEA0DB1A0E71B4007E3236 /* CoreDataStack.m in Sources */,
+				DACEA0DF1A0E7250007E3236 /* Thoughts.m in Sources */,
 				0B781F2B1A0E685A008CCE69 /* ViewController.m in Sources */,
+				DACEA0D61A0E715A007E3236 /* Flashback.xcdatamodeld in Sources */,
 				0B781F251A0E685A008CCE69 /* AppDelegate.m in Sources */,
 				0B781F211A0E685A008CCE69 /* main.m in Sources */,
 			);
@@ -458,6 +497,7 @@
 				0B781F451A0E685A008CCE69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B781F461A0E685A008CCE69 /* Build configuration list for PBXNativeTarget "FlashbackTests" */ = {
 			isa = XCConfigurationList;
@@ -466,8 +506,22 @@
 				0B781F481A0E685A008CCE69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DACEA0D41A0E715A007E3236 /* Flashback.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DACEA0D51A0E715A007E3236 /* Flashback.xcdatamodel */,
+			);
+			currentVersion = DACEA0D51A0E715A007E3236 /* Flashback.xcdatamodel */;
+			path = Flashback.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0B781F091A0E685A008CCE69 /* Project object */;
 }
